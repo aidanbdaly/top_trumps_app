@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main">
+  <div class="header">
+
+		<div><h1>STAR WARS</h1></div>
+		<div><h2>TOP TRUMPS</h2></div>
+
+	</div>
+
+	<div class="selection_title">Select category</div>
+  <form method='POST' action= ' {{ url_for('index') }} ' enctype='multipart/form-data'>
+	<div class="selection">
+
+		<div class="selection_button">
+			<input type="radio" id="people" name="category" value="people" required>
+			<label for="people">people</label><br>
+			</div>
+		<div class="selection_button">
+			<input type="radio" id="vehicles" name="category" value="vehicles" required>
+			<label for="vehicles">vehicles</label><br>
+			</div>
+		<div class="selection_button">
+			<input type="radio" id="starships" name="category" value="starships" required>
+			<label for="starships">starships</label><br>
+			</div>
+		<div class="selection_button">
+			<input type="radio" id="planets" name="category" value="planets" required>
+			<label for="planets">planets</label><br>
+			</div>
+
+	</div>
+
+	<div class="selection_title">Select players</div>
+
+	<div class="selection">
+
+    <div class="selection_button">
+			<input type="radio" id="2" name="players" value="2" required>
+			<label for="2">2</label><br>
+			</div>
+    <div class="selection_button">
+			<input type="radio" id="3" name="players" value="3" required>
+			<label for="3">3</label><br>
+			</div>
+		<div class="selection_button">
+			<input type="radio" id="4" name="players" value="4" required>
+			<label for="4">4</label><br>
+			</div>
+		<div class="selection_button">
+			<input type="radio" id="5" name="players" value="5" required>
+			<label for="5">5</label><br>
+			</div>
+		<div class="selection_button">
+			<input type="radio" id="6" name="players" value="6" required>
+			<label for="6">6</label><br>
+			</div>
+
+ </div>
+	<div class="selection submit"><button type="submit" class="selection_button submit_button">Play</button></div>
+  </form>
+
+</div>
+
+
+<div class="card_main" id="holder">
+
+</div>
+
+<div class="result_main">
+
+  <div class="outcome_holder"><h2 class="outcome_title">CATEGORY:&nbsp;</h2><h2 class="outcome_result">{{attribute}}</h2></div>
+  <div class="outcome_holder"><h2 class="outcome_title">WINNER:&nbsp;</h2><h2 class="outcome_result">{{result}}</h2></div>
+
+</div>
+
+
+
+</div>
+
+
+{% endblock %}

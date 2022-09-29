@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scales=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ url_for('static', filename='stylesheets/styles.css') }}" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+
+<body>
+
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+<script>
+
+  //Creating blank string.
+  let result_display = "";
+
+  //For each card in api_response, a HTML block is inserted into "holder"
+  {{ api_response|safe }}.forEach(item => {
+
+  result_display += '<div class="card">';
+
+  //For each attribute, <div>'s are added to the block
+  for (let k = 0; k < item.length; k++) {
+
+    result_display += '<div class="card_title">'
+                   + item[k][0]
+                   + '<div class="card_data">'
+                   + item[k][1]
+                   + '</div>'
+                   + '</div>';
+  }
+
+  result_display += '</div>';
+
+  })
+  
+  document.getElementById("holder").innerHTML = result_display;
+
+</script>
+</html>
