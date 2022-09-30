@@ -7,11 +7,11 @@ def filter(
 
     request_result_filtered = []
 
-    #Some entries contain the attribute values 'unknown'. These would make
+    #Some entries contain unusable attribute values. These would make
     #unplayable cards and are thus removed.
     for entry in input_card_data:
-        #Cumalitive count of unknowns.
-        total_unknowns = 0
+        #Cumalitive count of unwanted.
+        total_unwanted = 0
 
         for attribute in entry:
 
@@ -20,9 +20,15 @@ def filter(
             if attribute in attributes.categories[category_type]:
 
                 if entry[attribute] == 'unknown':
-                    total_unknowns += 1
+                    total_unwanted += 1
 
-        if total_unknowns == 0:
+                if ',' in entry[attribute]:
+                    total_unwanted += 1
+
+                if 'n/a' in entry[attribute]:
+                    total_unwanted += 1
+
+        if total_unwanted == 0:
             request_result_filtered.append(entry)
 
     return request_result_filtered
