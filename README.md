@@ -1,5 +1,7 @@
 # top_trumps_app
 
+I think I have completed most of the tasks - I was unable to get it to run by itself though as I am not that familiar with the Flask library, however I am quite proud of it.
+
 I have hopefully made this as easy to use as possible and deployed it as a web app online using PythonAnywhere. It can be accessed via:
 
 aidanbdaly.pythonanywhere.com
