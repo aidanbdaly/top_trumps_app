@@ -15,7 +15,7 @@ def generate(input_card_data):
         deck_upperlimit = 32
 
     #Calculate total cards in deck.
-    deck_count = random.randint(24,deck_upperlimit)
+    deck_count = random.randint(20,deck_upperlimit)
     deck = list(range(deck_count))
     #Shuffling the deck.
     random.shuffle(deck)
